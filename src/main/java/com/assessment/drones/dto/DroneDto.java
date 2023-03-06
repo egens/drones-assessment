@@ -25,14 +25,14 @@ import java.util.List;
 public class DroneDto {
 
     @Size(max = 100)
-    String serialNumber;
-    DroneModel model;
+    private String serialNumber;
+    private DroneModel model;
     @Min(0)
     @Max(500)
-    Integer weightLimit;
+    private Integer weightLimit;
     @Min(0)
     @Max(100)
-    Integer batteryCapacity;
-    DroneState state;
-    List<MedicationDto> medications;
+    private Integer batteryCapacity;
+    private DroneState state;
+    private List<MedicationDto> medications;
 }

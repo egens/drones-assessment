@@ -15,9 +15,9 @@ import javax.validation.constraints.Pattern;
 public class MedicationDto {
 
     @Pattern(regexp = "[A-z0-9-_]")
-    String name;
-    Integer weight;
+    private String name;
+    private Integer weight;
     @Pattern(regexp = "[A-Z0-9_]")
-    String code;
-    String imageUrl;
+    private String code;
+    private String imageUrl;
 }

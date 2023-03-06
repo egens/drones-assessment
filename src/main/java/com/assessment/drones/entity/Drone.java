@@ -2,26 +2,25 @@ package com.assessment.drones.entity;
 
 import lombok.*;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.OneToMany;
-import javax.validation.constraints.Max;
-import javax.validation.constraints.Min;
-import javax.validation.constraints.Size;
+import javax.persistence.*;
 import java.util.List;
-import java.util.Set;
 
+@Builder
 @Entity
 @Getter
 @Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class Drone {
 
     @Id
-    String serialNumber;
-    DroneModel model;
-    Integer weightLimit;
-    Integer batteryCapacity;
-    DroneState state;
+    private String serialNumber;
+    @Enumerated(EnumType.STRING)
+    private DroneModel model;
+    private Integer weightLimit;
+    private Integer batteryCapacity;
+    @Enumerated(EnumType.STRING)
+    private DroneState state;
     @OneToMany
-    List<Medication> medications;
+    private List<Medication> medications;
 }

@@ -22,7 +22,7 @@ public class DroneHistoryChecker {
     private final DroneRepository droneRepository;
     private final DroneHistoryRepository droneHistoryRepository;
 
-    @Scheduled(cron = "/5 * * * * *")
+    @Scheduled(cron = "* * * * * *")
     private void droneHistory() {
         LocalDateTime time = LocalDateTime.now();
         List<DroneHistory> droneHistory = droneRepository.findAll().stream().map(d -> DroneHistory.builder()

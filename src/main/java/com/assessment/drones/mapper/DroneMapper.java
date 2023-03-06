@@ -6,10 +6,10 @@ import org.mapstruct.Mapper;
 
 import java.util.List;
 
-@Mapper(componentModel = "spring")
+@Mapper(componentModel = "spring", uses = MedicationMapper.class)
 public interface DroneMapper {
 
-    Drone mapFromDto(DroneDto dto);
-    DroneDto mapToDto(Drone dto);
-    List<DroneDto> mapListToDto(List<Drone> dto);
+    Drone mapFromDto(DroneDto data);
+    DroneDto mapToDto(Drone data);
+    List<DroneDto> mapListToDto(List<Drone> data);
 }

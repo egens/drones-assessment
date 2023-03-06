@@ -1,17 +1,23 @@
 package com.assessment.drones.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
 @Entity
 @Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class Medication {
 
-    String name;
-    Integer weight;
+    private String name;
+    private Integer weight;
     @Id
-    String code;
-    String imageUrl;
+    private String code;
+    private String imageUrl;
 }

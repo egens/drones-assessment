@@ -43,7 +43,7 @@ public class MedicationService {
         Drone drone = droneOptional.get();
         List<Medication> medications = medicationRepository.findAllById(medicationCodes);
         if (!checkDroneWeightLimit(drone, medications))
-            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR);
+            throw new ResponseStatusException(HttpStatus.INTERNAL_SERVER_ERROR, "Drone weight limit exceeded.");
         drone.setMedications(medications);
         droneRepository.save(drone);
     }

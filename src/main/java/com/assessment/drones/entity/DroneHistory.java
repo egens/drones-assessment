@@ -17,9 +17,9 @@ import java.util.UUID;
 public class DroneHistory {
 
     @Id
-    UUID uuid;
-    LocalDateTime timestamp;
-    Integer batteryCapacity;
+    private UUID uuid;
+    private LocalDateTime timestamp;
+    private Integer batteryCapacity;
     @OneToOne
-    Drone drone;
+    private Drone drone;
 }
