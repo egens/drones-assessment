@@ -13,6 +13,7 @@ import java.util.Set;
 
 @Entity
 @Getter
+@Setter
 public class Drone {
 
     @Id
