@@ -48,6 +48,9 @@ public class MedicationService {
         droneRepository.save(drone);
     }
 
+    /**
+     * Prevent the drone from being loaded with more weight that it can carry;
+     */
     private boolean checkDroneWeightLimit(Drone drone, List<Medication> medications) {
         int newMedicationsWeight = medications.stream()
                 .mapToInt(Medication::getWeight)

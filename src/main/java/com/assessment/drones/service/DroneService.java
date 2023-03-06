@@ -29,6 +29,7 @@ public class DroneService {
     public List<DroneDto> getDrones(boolean loadingAvailable) {
         Stream<Drone> droneStream = droneRepository.findAll().stream();
         if (loadingAvailable) {
+            // Prevent the drone from being in LOADING state if the battery level is below 25%;
             droneStream = droneStream.filter(d -> d.getBatteryCapacity() > LOADING_BATTERY_LIMIT);
         }
         return droneMapper.mapListToDto(droneStream.toList());
